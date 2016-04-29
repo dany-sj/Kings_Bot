@@ -148,13 +148,9 @@ end
 
 return {
   patterns = {
-  "^[!/](all)$",
-  "^[!/](all) (%d+)$"
+  "^([Aa]ll)$",
+  "^([Aa]ll) (%d+)$"
   },
   run = run
 }
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
