@@ -480,12 +480,12 @@ function run(msg, matches)
     local receiver = get_receiver(msg)
 	if matches[2] then if data[tostring(matches[2])] then
 		local settings = data[tostring(matches[2])]['settings']
-		if matches[1] == 'setabout' and matches[2] then
+		if matches[1] == 'stabout' and matches[2] then
 			local target = matches[2]
 		    local about = matches[3]
 		    return set_description(msg, data, target, about)
 		end
-		if matches[1] == 'setrules' then
+		if matches[1] == 'strules' then
 		    rules = matches[3]
 			local target = matches[2]
 		    return set_rules(msg, data, target)
@@ -501,7 +501,7 @@ function run(msg, matches)
 		    if matches[3] == 'photo' then
 		        return lock_group_photo(msg, data, target)
 		    end
-		    if matches[3] == 'flood' then
+		    if matches[3] == 'flod' then
 		        return lock_group_flood(msg, data, target)
 		    end
 		end
@@ -516,16 +516,16 @@ function run(msg, matches)
 		    if matches[3] == 'photo' then
 		    	return unlock_group_photo(msg, data, target)
 		    end
-		    if matches[3] == 'flood' then
+		    if matches[3] == 'flod' then
 		        return unlock_group_flood(msg, data, target)
 		    end
 		end
-		if matches[1] == 'settings' and data[tostring(matches[2])]['settings'] then
+		if matches[1] == 'sting' and data[tostring(matches[2])]['settings'] then
 			local target = matches[2]
 		    return show_group_settings(msg, data, target)
 		end
 
-                if matches[1] == 'setname' and is_realm(msg) then
+                if matches[1] == 'stnam' and is_realm(msg) then
                     local new_name = string.gsub(matches[2], '_', ' ')
                     data[tostring(msg.to.id)]['settings']['set_name'] = new_name
                     save_data(_config.moderation.data, data)
@@ -534,7 +534,7 @@ function run(msg, matches)
                     rename_chat(to_rename, group_name_set, ok_cb, false)
                     savelog(msg.to.id, "Realm { "..msg.to.print_name.." }  name changed to [ "..new_name.." ] by "..name_log.." ["..msg.from.id.."]")
                 end
-		if matches[1] == 'setgpname' and is_admin(msg) then
+		if matches[1] == 'stgpnam' and is_admin(msg) then
 		    local new_name = string.gsub(matches[3], '_', ' ')
 		    data[tostring(matches[2])]['settings']['set_name'] = new_name
 		    save_data(_config.moderation.data, data)
@@ -546,11 +546,11 @@ function run(msg, matches)
 
 	    end 
         end
-    	if matches[1] == 'help' and is_realm(msg) then
+    	if matches[1] == 'hlp' and is_realm(msg) then
       		savelog(msg.to.id, name_log.." ["..msg.from.id.."] Used /help")
      		return help()
     	end
-              if matches[1] == 'set' then
+              if matches[1] == 'st' then
                 if matches[2] == 'loggroup' then
                    savelog(msg.to.id, name_log.." ["..msg.from.id.."] set as log group")
                   return set_log_group(msg)
@@ -658,26 +658,26 @@ end
 
 return {
   patterns = {
-    "^[!/](creategroup) (.*)$",
-    "^[!/](createrealm) (.*)$",
-    "^[!/](setabout) (%d+) (.*)$",
-    "^[!/](setrules) (%d+) (.*)$",
-    "^[!/](setname) (.*)$",
-    "^[!/](setgpname) (%d+) (.*)$",
-    "^[!/](setname) (%d+) (.*)$",
-        "^[!/](lock) (%d+) (.*)$",
-    "^[!/](unlock) (%d+) (.*)$",
-    "^[!/](setting) (%d+)$",
-        "^[!/](wholist)$",
-        "^[!/](who)$",
-        "^[!/](type)$",
-    "^[!/](kill) (chat) (%d+)$",
-    "^[!/](kill) (realm) (%d+)$",
-    "^[!/](addadmin) (.*)$", -- sudoers only
-    "^[!/](removeadmin) (.*)$", -- sudoers only
-    "^[!/](list) (.*)$",
-        "^[!/](log)$",
-        "^[!/](help)$",
+    "^([Cc]reategroup) (.*)$",
+    "^([Cc]reaterealm) (.*)$",
+    "^([Ss]tabout) (%d+) (.*)$",
+    "^([Ss]trules) (%d+) (.*)$",
+    "^([Ss]tnam) (.*)$",
+    "^([Ss]tgpnam) (%d+) (.*)$",
+    "^([Ss]tnam) (%d+) (.*)$",
+        "^([Ll]ock) (%d+) (.*)$",
+    "^([Uu]nlock) (%d+) (.*)$",
+    "^([Ss]ting) (%d+)$",
+        "^([Ww]holist)$",
+        "^([Ww]ho)$",
+        "^([Tt]ype)$",
+    "^([Kk]ill) (chat) (%d+)$",
+    "^([Kk]ill) (realm) (%d+)$",
+    "^([Aa]ddadmin) (.*)$", -- sudoers only
+    "^([Rr]emoveadmin) (.*)$", -- sudoers only
+    "^(list) (.*)$",
+        "^(log)$",
+        "^([Hh]lp)$",
         "^!!tgservice (.+)$",
   },
   run = run
