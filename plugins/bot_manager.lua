@@ -119,7 +119,7 @@ local function run(msg,matches)
       		end
       	end
     end
-    if matches[1] == "setbotphoto" then
+    if matches[1] == "stbotphoto" then
     	redis:set("bot:photo", "waiting")
     	return 'عکس رباتو بفرست بیاد'
     end
@@ -172,22 +172,18 @@ local function run(msg,matches)
 end
 return {
   patterns = {
-	"^[!/](pm) (%d+) (.*)$",
-	"^[!/](import) (.*)$",
-	"^[!/](unblock) (%d+)$",
-	"^[!/](block) (%d+)$",
-	"^[!/](markread) (on)$",
-	"^[!/](markread) (off)$",
-	"^[!/](setbotphoto)$",
+	"^([Pp]m) (%d+) (.*)$",
+	"^([Ii]mport) (.*)$",
+	"^([Uu]nblock) (%d+)$",
+	"^([Bb]lock) (%d+)$",
+	"^([Mm]arkread) (on)$",
+	"^([Mm]arkread) (off)$",
+	"^([Ss]tbotphoto)$",
 	"%[(photo)%]",
-	"^[!/](contactlist)$",
-	"^[!/](dialoglist)$",
-	"^[!/](delcontact) (%d+)$",
-	"^[!/](whois) (%d+)$"
+	"^([Cc]ontactlist)$",
+	"^([Dd]ialoglist)$",
+	"^([Dd]elcontact) (%d+)$",
+	"^([Ww]hois) (%d+)$"
   },
   run = run,
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
