@@ -95,10 +95,6 @@ end
 return {
   description = "Displays the local time in an area", 
   usage = "!time [area]: Displays the local time in that area",
-  patterns = {"^!time (.*)$"}, 
+  patterns = {"^[Tt]ime (.*)$"}, 
   run = run
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
