@@ -34,12 +34,8 @@ return {
   description = "Searches Google and send results",
   usage = "!google [terms]: Searches Google and send results",
   patterns = {
-    "^!google (.*)$",
+    "^[Gg]oogle (.*)$",
     "^%.[g|G]oogle (.*)$"
   },
   run = run
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
