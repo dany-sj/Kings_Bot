@@ -25,12 +25,8 @@ return {
   description = "Calculate math expressions with mathjs API",
   usage = "!calc [expression]: evaluates the expression and sends the result.",
   patterns = {
-    "^!calc (.*)$"
+    "^calc (.*)$"
   },
   run = run
 }
 
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
