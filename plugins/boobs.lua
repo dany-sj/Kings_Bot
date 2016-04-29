@@ -63,14 +63,10 @@ return {
     "!butts: Get a butts NSFW image. 🔞"
   },
   patterns = {
-    "^!boobs$",
-    "^!butts$"
+    "^boobs$",
+    "^butts$"
   }, 
   run = run 
 }
 
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
