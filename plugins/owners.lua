@@ -131,7 +131,7 @@ local function run(msg, matches)
       savelog(matches[1], name.." ["..msg.from.id.."] banned user ".. matches[3])
       return 'User '..user_id..' banned'
     end
-    if matches[2] == 'unban' then
+    if matches[2] == 'unbn' then
     if tonumber(matches[3]) == tonumber(our_id) then return false end
       local chat_id = matches[1]
       if not is_owner2(msg.from.id, chat_id) then
@@ -147,7 +147,7 @@ local function run(msg, matches)
       savelog(matches[1], name.." ["..msg.from.id.."] unbanned user ".. matches[3])
       return 'User '..user_id..' unbanned'
     end
-    if matches[2] == 'kick' then
+    if matches[2] == 'kk' then
       local chat_id = matches[1]
       if not is_owner2(msg.from.id, chat_id) then
         return "You are not the owner of this group"
@@ -195,7 +195,7 @@ local function run(msg, matches)
         savelog(matches[1], name.." ["..msg.from.id.."] cleaned about")
       end
     end
-    if matches[2] == "setflood" then
+    if matches[2] == "stflod" then
       if not is_owner2(msg.from.id, chat_id) then
         return "You are not the owner of this group"
       end
@@ -288,7 +288,7 @@ local function run(msg, matches)
       savelog(matches[2], name.." ["..msg.from.id.."] has changed group rules to ["..matches[3].."]")
       return set_rules(target, rules)
     end
-    if matches[1] == 'changename' and is_owner2(msg.from.id, matches[2]) then
+    if matches[1] == 'changenam' and is_owner2(msg.from.id, matches[2]) then
       local new_name = string.gsub(matches[3], '_', ' ')
       data[tostring(matches[2])]['settings']['set_name'] = new_name
       save_data(_config.moderation.data, data)
@@ -306,16 +306,12 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/]owners (%d+) ([^%s]+) (.*)$",
-    "^[!/]owners (%d+) ([^%s]+)$",
-    "^[!/](changeabout) (%d+) (.*)$",
-    "^[!/](changerules) (%d+) (.*)$",
-    "^[!/](changename) (%d+) (.*)$",
-		"^[!/](loggroup) (%d+)$"
+    "^[Oo]ners (%d+) ([^%s]+) (.*)$",
+    "^[Oo]ners (%d+) ([^%s]+)$",
+    "^([Cc]hangeabout) (%d+) (.*)$",
+    "^([Cc]hangerules) (%d+) (.*)$",
+    "^([Cc]hangenam) (%d+) (.*)$",
+		"^([Ll]oggroup) (%d+)$"
   },
   run = run
 }
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
