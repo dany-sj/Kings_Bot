@@ -68,17 +68,12 @@ return {
     ' !invite [id|user_name|name]'
   },
   patterns = {
-    "^!invite$",
-    "^!invite (.*)$",
-    "^!invite (%d+)$"
+    "^[Ii]nvite$",
+    "^[Ii]nvite (.*)$",
+    "^[Ii]nvite (%d+)$"
   },
   run = run,
   privileged = true
 }
 
 end
-
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
