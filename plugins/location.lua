@@ -53,13 +53,10 @@ end
 
 return {
   description = "Gets information about a location, maplink and overview", 
-  usage = "!loc (location): Gets information about a location, maplink and overview",
+  usage = "loc (location): Gets information about a location, maplink and overview",
   patterns = {"^!loc (.*)$"}, 
   run = run 
 }
 
 end
---Copyright and edit; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
+
