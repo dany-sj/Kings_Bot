@@ -11,13 +11,9 @@ function run(msg, matches)
 end
 return {
   patterns = {
-    "^[/!](reboot)",
-    "^[/!](serverinfo)"
+    "^([Rr]eboot)",
+    "^([Ss]erverinfo)"
   },
   run = run
 }
 end
---Copyright; @behroozyaghi
---Persian Translate; @behroozyaghi
---ch : @nod32team
---کپی بدون ذکر منبع حرام است
